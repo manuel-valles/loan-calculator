@@ -8,7 +8,75 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
   <title>Loan Calculator | JS App</title>
 </head>
-<body>
+<body class="cyan darken-3">
+  <div class="container">
+    <div class="row">
+      <div class="col s8 offset-s2">
+        <div class="card">
+          <div class="card-content center">
+            <h1 class="card-title">Loan Calculator</h1>
+            <div class="row">
+              <form id="loan-group">
+                  <div class="input-field col s12">
+                    <i class="prefix">£</i>
+                    <input id="amount" type="number" class="validate">
+                    <label for="amount">Loan amount</label>
+                  </div>
+                  <div class="input-field col s12">
+                    <i class="prefix">%</i>
+                    <input id="interest" type="number" class="validate">
+                    <label for="interest">Interest</label>
+                  </div>
+                  <div class="input-field col s8 offset-s4">
+                    <input id="interest" type="number" class="validate">
+                    <label for="interest">Years To Repay</label>
+                  </div>
+                  <div class="input-field col s12">
+                      <button class="btn waves-effect waves-light" type="submit" name="action">Calculate
+                        <i class="material-icons right">trending_up</i>
+                      </button>
+                  </div>
+              </form>
+            </div> <!-- ./row/form -->
+            <!-- LOADER -->
+            <div class="section" id="loading" hidden>
+              <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue-only">
+                  <div class="circle-clipper left">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="gap-patch">
+                    <div class="circle"></div>
+                  </div>
+                  <div class="circle-clipper right">
+                    <div class="circle"></div>
+                  </div>
+                </div>
+              </div>
+            </div>  <!-- ./section/loader -->
+            <!-- RESULTS -->
+            <div id="results" class="row">
+              <div class="divider"></div>
+              <br>
+              <h5>Results</h5>
+              <div class="input-field col s12">
+                <input id="monthly-payment" type="number" disabled>
+                <label for="monthly-payment">Monthly Payment</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="total-payment" type="number" disabled>
+                <label for="total-payment">Total Payment</label>
+              </div>
+              <div class="input-field col s12">
+                <input id="total-interest" type="number" disabled>
+                <label for="total-interest">Total Interest</label>
+              </div>
+            </div>  <!-- ./row/results -->
+          </div>  <!-- ./card-content -->
+        </div> <!-- ./card -->
+      </div>  <!-- ./col -->
+    </div>  <!-- ./row/main -->
+  </div> <!-- ./container -->
 
   <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
