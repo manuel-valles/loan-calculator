@@ -19,15 +19,15 @@ function calculateResults(e){
   // Compute monthly payment
   const x = Math.pow(1+calculatedInterest, calculatedPayments);
   const monthly = (principal*x*calculatedInterest)/(x-1);
-  
+
   // Validation finite monthly
   if(isFinite(monthly)){
     monthlyPayment.value = monthly.toFixed(2);
     totalPayment.value = (monthly*calculatedPayments).toFixed(2);
     totalInterest.value = ((monthly*calculatedPayments)-principal).toFixed(2);
     results.forEach(input=> {
-      input.style.color = '#00838f';
-      input.style.fontSize = '120%';
+      input.style.cssText = 'color:#00838f; font-size:120%';
+      input.nextElementSibling.style.cssText = 'color:black; font-weight: bold';
     });
   } else{
     console.log('Please check your numbers');

@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="./style.css">
   <title>Loan Calculator | JS App</title>
 </head>
 <body class="cyan darken-3">
@@ -60,15 +61,15 @@
               <br>
               <h5>Results</h5>
               <div class="input-field col s12">
-                <input id="monthly-payment" type="number" value="0.00" disabled>
+                <input id="monthly-payment" type="number" value="0.00" step="any" disabled>
                 <label for="monthly-payment">Monthly Payment</label>
               </div>
               <div class="input-field col s12">
-                <input id="total-payment" type="number" value="0.00" disabled>
+                <input id="total-payment" type="number" value="0.00" step="any" disabled>
                 <label for="total-payment">Total Payment</label>
               </div>
               <div class="input-field col s12">
-                <input id="total-interest" type="number" value="0.00" disabled>
+                <input id="total-interest" type="number" value="0.00" step="any" disabled>
                 <label for="total-interest">Total Interest</label>
               </div>
             </div>  <!-- ./row/results -->
