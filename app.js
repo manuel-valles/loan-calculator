@@ -30,8 +30,34 @@ function calculateResults(e){
       input.nextElementSibling.style.cssText = 'color:black; font-weight: bold';
     });
   } else{
-    console.log('Please check your numbers');
+    // OPT-A: The easiest one
+    Materialize.toast('Please check your numbers!', 2000, 'red');
+    
+    // OPT-B: Pure JS
+    // showError('Please check your numbers');
   }
 
-  e.preventDefault();
+  e.preventDefault(); 
+}
+
+function showError(error){
+  // Create a div
+  const errorDiv = document.createElement('div');
+  // Add class
+  errorDiv.className = 'section red lighten-5 red-text';
+  // Create text node and append to div
+  errorDiv.appendChild(document.createTextNode(error));
+  // Get elements
+  const cardContent =  document.querySelector('.card-content');
+  const cardTitle =  document.querySelector('.card-title');
+  // Insert error above card-title
+  cardContent.insertBefore(errorDiv, cardTitle);
+
+  // Clear error after 3 seconds
+  setTimeout(clearError, 3000);
+}
+
+// Clear error
+function clearError(){
+  document.querySelector('.section.red').remove();
 }
