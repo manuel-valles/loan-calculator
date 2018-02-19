@@ -8,9 +8,8 @@
 /* Loader & results */
 #loader, #results{
   display: none;
-  height: 300px;
 }
 
 .preloader-wrapper{
-  margin-top: 118px;
+  margin-top: 25px;
 }
