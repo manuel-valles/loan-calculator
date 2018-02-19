@@ -1,8 +1,17 @@
 // Listen for submit
-document.getElementById('loan-form').addEventListener('submit', calculateResults);
+document.getElementById('loan-form').addEventListener('submit', function(e){
+  // Hide results
+  document.getElementById('results').style.display = 'none';
+  // Show loader
+  document.getElementById('loader').style.display = 'block';
+  // Get results after 2 seconds
+  setTimeout(calculateResults, 2000);
+
+  e.preventDefault();
+});
 
 // Calculate Results
-function calculateResults(e){
+function calculateResults(){
   // UI Vars
   const amount = document.getElementById('amount');
   const interest = document.getElementById('interest');
@@ -29,18 +38,28 @@ function calculateResults(e){
       input.style.cssText = 'color:#00838f; font-size:120%';
       input.nextElementSibling.style.cssText = 'color:black; font-weight: bold';
     });
+    // Show results
+    document.getElementById('results').style.display = 'block';
+    // Hide loader
+    document.getElementById('loader').style.display = 'none';
   } else{
+    // Hide results
+    document.getElementById('results').style.display = 'none';
+    // Hide loader
+    document.getElementById('loader').style.display = 'none';
     // OPT-A: The easiest one
-    Materialize.toast('Please check your numbers!', 2000, 'red');
+    Materialize.toast('Please check your numbers!', 3000, 'red');
     
     // OPT-B: Pure JS
     // showError('Please check your numbers');
   }
-
-  e.preventDefault(); 
 }
 
 function showError(error){
+  // Hide results
+  document.getElementById('results').style.display = 'none';
+  // Hide loader
+  document.getElementById('loader').style.display = 'none';
   // Create a div
   const errorDiv = document.createElement('div');
   // Add class
